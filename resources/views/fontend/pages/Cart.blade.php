@@ -31,7 +31,7 @@
                             <td><button class="btn btn-secondary btn-sm" type="submit">update</button></td>
                             <td>{{$cart->price * $cart->qty}}</td>
                             {{-- <td><a href="{{route('add-to-cart.remove',($cart->rowId))}}"><i class="fa fa-close"></i></a></td> --}}
-                            <td><button type="button" id='cartdeletebutton'><i class="fa fa-close"></i></button></td>
+                            <td><button type="button" id='cartdeletebutton' class="btnstyle"><i class="fa fa-close"></i></button></td>
                             <input type="hidden" value="{{$cart->rowId}}" name="rowid" id="input">
                         </form>
                     </tr>

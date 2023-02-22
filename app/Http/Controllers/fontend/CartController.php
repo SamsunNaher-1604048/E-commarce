@@ -10,10 +10,10 @@ use Cart;
 class CartController extends Controller
 {
     function addtocart($id){
-        //  $msg = "This is a simple message.";
-        //  return response()->json(array('msg'=>$id), 200);
-       $product = Product::find($id);
-       Cart::add(['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->sell_price, 'weight' => $product->sell_price, 'options' => ['image' =>$product->image]]);
+        $product = Product::find($id);
+        Cart::add(['id' => $product->id, 'name' => $product->name, 'qty' => 1, 'price' => $product->sell_price, 'weight' => $product->sell_price, 'options' => ['image' =>$product->image]]);
+        $msg = "This is a simple message.";
+        return response()->json(array('msg'=>$id), 200);
 
     }
 
@@ -28,7 +28,7 @@ class CartController extends Controller
     }
 
     function updatecart(Request $req){
-
+ 
         Cart::update($req->rowid, $req->quality);
         return redirect()->route('add-to-cart.show');
     }

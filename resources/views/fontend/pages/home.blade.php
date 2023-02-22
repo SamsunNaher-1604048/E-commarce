@@ -173,13 +173,7 @@ $collections = collect($carts);
                 <div class="row">
                     <div class="product-active owl-carousel">
                         @foreach($tvproducts as $tvproduct)
-
-                        <?php
-                        $prodExist = $collections->where('id', $tvproduct->id)->first();
-                        $disabled = $prodExist ? 'disabled' : 'none';
-                        echo $disabled;
-                        ?>
-
+                        
                         
                         <div class="col-lg-12">
                             <!-- single-product-wrap start -->

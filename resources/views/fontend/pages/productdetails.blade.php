@@ -3,7 +3,6 @@
 <?php 
 $carts = Cart::content();
 $collections = collect($carts);
-
 ?>
 
 
@@ -49,12 +48,12 @@ $collections = collect($carts);
                             </p>
                         </div>
 
-                        
+
                         <div class="single-add-to-cart cart-quantity">
-                                <button class="add-to-cart" type="button" id='cartbutton' disabled > Add to cart</button>
+                            <button class="add-to-cart" type="button" id='cartbutton'> Add to cart</button>
                         </div>
                         <div class="product-additional-info pt-25">
-                            <a class="wishlist-btn" href="wishlist.html"><i class="fa fa-heart-o"></i>Add to wishlist</a>
+                          
                             <div class="product-social-sharing pt-25">
                                 <ul>
                                     <li class="facebook"><a href="#"><i class="fa fa-facebook"></i>Facebook</a></li>
@@ -130,12 +129,12 @@ $collections = collect($carts);
                                         <div class="price-box">
                                             <span class="new-price">${{$product->sell_price}}</span>
                                         </div>
+
                                     </div>
                                     <div class="add-actions">
                                         <ul class="add-actions-link mt-3">
-                                            <input id='product_id' value={{$product->id}} type='hidden'>
                                             <div class="single-add-to-cart cart-quantity">
-                                                <button type="button" class="btn btn-warning addtocartButton" id='cartbutton'>Add to cart</button>
+                                                <a type="button" class="btn btn-warning addtocartButton" href="{{route('home.product.show',($product->id))}}">View product</a>
                                            </div>
                                         </ul>
                                     </div>
@@ -156,13 +155,11 @@ $collections = collect($carts);
     $(document).ready(function(){
         $('#cartbutton').click(function(){
             const id = $('#product_id').val();
-
             $.ajax({  
                 type: 'GET',
                 url: '/add-to-cart/'+id, 
                 dataType:'JSON',
                 success:function(response) {
-
                     window.location = "/addtocart/show";
                 }
             });
