@@ -1,7 +1,10 @@
 @extends('backend.layouts.layout')
-@include('backend.include.bread-crume', ['parent' => 'Slide', 'child' => 'Create'])
+
 @section('content')
 <div class="box">
+    <div class="subbox">
+        <p class="p-2">Create Slide</p>
+    </div>
     <form action="{{route('slide.store')}}" method="post" enctype="multipart/form-data" >
         @csrf
         <div class="mt-4 col-6">

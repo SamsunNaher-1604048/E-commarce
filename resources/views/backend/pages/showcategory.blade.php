@@ -1,6 +1,9 @@
 @extends('backend.layouts.layout')
 @section('content')
 <div class="box">
+  <div class="subbox">
+    <p class="p-2">Show Category</p>
+</div>
     <table class="table table-striped">
         <thead>
           <tr>

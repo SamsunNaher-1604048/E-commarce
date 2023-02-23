@@ -49,6 +49,7 @@
       <div class="layout-container">
         @include('backend.include.manu')
         <div class="layout-page">
+          @include('backend.include.nav')
           <div class="content-wrapper">
             @yield('content')
           </div>

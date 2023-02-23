@@ -24,9 +24,12 @@ class loginController extends Controller
             if( Auth::guard('admin')->user()->type =='admin'){
                return redirect()->route('dashboard.show');
             }
+            else{
+                return redirect()->route('admin.login');
+            }
         }
         else{
-            return 'notdone';
+            return redirect()->route('admin.login');
         }
     }
 

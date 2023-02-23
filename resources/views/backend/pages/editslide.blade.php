@@ -1,6 +1,9 @@
 @extends('backend.layouts.layout')
 @section('content')
 <div class="box">
+    <div class="subbox">
+        <p class="p-2">Edit Slide</p>
+    </div>
     <form action="{{route('slide.update',[$slider->id])}}" method="post" enctype="multipart/form-data" >
         @csrf
         <div class="mt-4 col-6">

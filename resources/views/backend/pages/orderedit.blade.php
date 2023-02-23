@@ -2,6 +2,9 @@
 @section('content')
 
 <div class="box mt-5">
+    <div class="subbox">
+        <p class="p-2">Edit Order of Customer</p>
+    </div>
     <div>Edit From of: {{$orderitem->product_name}}</div>
     <form action="{{route('admin.order.update')}}" method="post" enctype="multipart/form-data" >
         @csrf

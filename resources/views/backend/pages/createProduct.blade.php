@@ -1,6 +1,9 @@
 @extends('backend.layouts.layout')
 @section('content')
 <div class="box">
+    <div class="subbox">
+        <p class="p-2">Create Product</p>
+    </div>
     <form action="{{route('product.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">

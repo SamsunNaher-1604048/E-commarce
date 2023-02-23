@@ -1,6 +1,9 @@
 @extends('backend.layouts.layout')
 @section('content')
 <div class="box">
+    <div class="subbox">
+        <p class="p-2">Edit Product</p>
+    </div>
     <form action="{{route('product.update',[$product->id])}}" method="post" enctype="multipart/form-data">
         @csrf
 

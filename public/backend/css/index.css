@@ -31,3 +31,10 @@
     font-size: 15px;
      align-items: center;
 }
+
+.subbox{
+    background-color:#E7E7FF;
+    color: #888BFF;
+    border-radius: 10px;
+    font-size: 20px;
+}

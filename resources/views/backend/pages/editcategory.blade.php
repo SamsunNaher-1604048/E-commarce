@@ -1,6 +1,9 @@
 @extends('backend.layouts.layout')
 @section('content')
 <div class="box">
+    <div class="subbox">
+        <p class="p-2">Edit Category</p>
+    </div>
     <form action="{{route('category.update',[$category->id])}}" method="post">
         @csrf
         <div class="mt-4 col-6">
