@@ -7,6 +7,7 @@ use App\Http\Controllers\fontend\CartController;
 use App\Http\Controllers\fontend\regController;
 use App\Http\Controllers\fontend\loginController;
 use App\Http\Controllers\fontend\OrderplaceController;
+use App\Http\Controllers\fontend\SearchController;
 
 
 
@@ -34,3 +35,7 @@ Route::get('/user/logout',[loginController::class, 'userlogout'])->name('user.lo
 
 Route::get('/order-place',[OrderplaceController::class,'orderplace'])->name('user.orderplace.show')->middleware('auth');
 Route::post('/order-place/save',[OrderplaceController::class,'saveorderplace'])->name('user.orderplace.save')->middleware('auth');
+
+//search product
+Route::post('/search',[SearchController::class ,'productsearch'])->name('product.search');
+
