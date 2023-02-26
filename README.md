@@ -15,7 +15,14 @@
 
 ***
 ### Feature of this E-commerce project
-- 
+- User and admin authintication
+- Add to Cart
+- Show tranding and best selling product
+- CRUD opreation of Product
+- CRUD operation of Category
+- CRUD operation of Slide
+- CRUR operation of Product order
+- Searching Option
 
 
 
