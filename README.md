@@ -2,4 +2,11 @@
 
 # Laravel E-commerce Project
 
+***
+
+### Technology that was used
+
+
+
+
 
