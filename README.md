@@ -5,6 +5,14 @@
 ***
 
 ### Technology that was used
+- Laravel
+- Bootsrap 5
+- HTMl
+- CSS
+- PHP
+- AJAX
+- 
+
 
 
 
