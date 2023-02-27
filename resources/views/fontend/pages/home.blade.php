@@ -77,11 +77,12 @@ $collections = collect($carts);
                         ?>
 
                         <div class="col-lg-12">
+                            {{-- <input type="hidden" id='product_id' value="{{$product->id}}"> --}}
                             <!-- single-product-wrap start -->
                             <div class="single-product-wrap">
                                 <div class="product-image">
                                     <a href="{{route('home.product.show',$product->id)}}">
-                                        <img src="{{asset($product->image)}}" alt="Li's Product Image">
+                                        <img src="{{asset($product->image)}}" alt=" ">
                                     </a>
                                     <span class="sticker">{{$product->badge}}</span>
                                 </div>
@@ -98,7 +99,7 @@ $collections = collect($carts);
                                             <input id='input' value={{$product->id}} type='hidden'>
 
                                             <div class="single-add-to-cart cart-quantity">
-                                                <a type="button" class="btn btn-warning addtocartButton {{ $disabled }}" id='cartbutton' href={{route('home.add-to-cart',$product->id)}}>Add to cart</a>
+                                                <a type="button" class="btn btn-warning addtocartButton {{ $disabled }}"  onclick="myFunction({{$product->id}})">Add to cart</a>
                                                 {{-- //<button type="button" class="btn btn-warning addtocartButton btn-{{$product->$id}}" id='cartbutton' {{ $disabled }}>Add to cart</button> --}}
                                             </div>
 
@@ -173,6 +174,10 @@ $collections = collect($carts);
                 <div class="row">
                     <div class="product-active owl-carousel">
                         @foreach($tvproducts as $tvproduct)
+                        <?php
+                        $prodExist = $collections->where('id', $tvproduct->id)->first();
+                        $disabled = $prodExist ? 'disabled' : '';
+                        ?>
                         
                         
                         <div class="col-lg-12">
@@ -191,6 +196,7 @@ $collections = collect($carts);
                                             <span class="new-price">${{$tvproduct->sell_price}}</span>
                                         </div>
                                     </div>
+
                                     <div class="add-actions">
                                         <ul class="add-actions-link mt-3">
                                             <input id='input' value={{$tvproduct->id}} type='hidden'>
@@ -298,79 +304,6 @@ $collections = collect($carts);
                             </div>
                         </div>
                     </div>
-                    <div id="home2" class="tab-pane fade">
-                        <div class="row">
-                            <div class="product-active owl-carousel">
-
-                                <div class="col-lg-12">
-                                    <!-- single-product-wrap start -->
-                                    <div class="single-product-wrap">
-                                        <div class="product-image">
-                                            <a href="single-product.html">
-                                                <img src= alt="Li's Product Image">
-                                            </a>
-                                            <span class="sticker"></span>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="product_desc_info">
-                                                <h4><a class="product_name" href="single-product.html"></a></h4>
-                                                <h4><a class="product_name" href="single-product.html"></a></h4>
-                                                <div class="price-box">
-                                                    <span class="new-price"></span>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul class="add-actions-link mt-3">
-                                                    <input id='input' value={{$trandding->id}} type='hidden'>
-                                                    <div class="single-add-to-cart cart-quantity">
-                                                        <button type="button" class="btn btn-warning addtocartButton" id='cartbutton'>Add to cart</button>
-                                                   </div>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single-product-wrap end -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="home3" class="tab-pane fade">
-                        <div class="row">
-                            <div class="product-active owl-carousel">
-                                <div class="col-lg-12">
-                                    <!-- single-product-wrap start -->
-                                    <div class="single-product-wrap">
-                                        <div class="product-image">
-                                            <a href="single-product.html">
-                                                <img src="{{asset('fontend/image/product/large-size/3.jpg')}}" alt="Li's Product Image">
-                                            </a>
-                                            <span class="sticker">New</span>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="product_desc_info">
-                                                
-                                                <h4><a class="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
-                                                <div class="price-box">
-                                                    <span class="new-price">$46.80</span>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul class="add-actions-link mt-3">
-                                                    <input id='input' value={{$trandding->id}} type='hidden'>
-                                                    <div class="single-add-to-cart cart-quantity">
-                                                        <button type="button" class="btn btn-warning addtocartButton" id='cartbutton'>Add to cart</button>
-                                                   </div>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single-product-wrap end -->
-                                </div>
-                            
-                                </div>
-                                
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <!-- Tab Menu Content Area End Here -->
@@ -434,75 +367,6 @@ $collections = collect($carts);
                             </div>
                         </div>
                     </div>
-                    <div id="home2" class="tab-pane fade">
-                        <div class="row">
-                            <div class="product-active owl-carousel">
-
-                                <div class="col-lg-12">
-                                    <!-- single-product-wrap start -->
-                                    <div class="single-product-wrap">
-                                        <div class="product-image">
-                                            <a href="single-product.html">
-                                                <img src= alt="Li's Product Image">
-                                            </a>
-                                            <span class="sticker"></span>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="product_desc_info">
-                                                <h4><a class="product_name" href="single-product.html"></a></h4>
-                                                <h4><a class="product_name" href="single-product.html"></a></h4>
-                                                <div class="price-box">
-                                                    <span class="new-price"></span>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul class="add-actions-link">
-                                                    <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single-product-wrap end -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="home3" class="tab-pane fade">
-                        <div class="row">
-                            <div class="product-active owl-carousel">
-                                <div class="col-lg-12">
-                                    <!-- single-product-wrap start -->
-                                    <div class="single-product-wrap">
-                                        <div class="product-image">
-                                            <a href="single-product.html">
-                                                <img src="{{asset('fontend/image/product/large-size/3.jpg')}}" alt="Li's Product Image">
-                                            </a>
-                                            <span class="sticker">New</span>
-                                        </div>
-                                        <div class="product_desc">
-                                            <div class="product_desc_info">
-                                                
-                                                <h4><a class="product_name" href="single-product.html">Accusantium dolorem1</a></h4>
-                                                <div class="price-box">
-                                                    <span class="new-price">$46.80</span>
-                                                </div>
-                                            </div>
-                                            <div class="add-actions">
-                                                <ul class="add-actions-link">
-                                                    <li class="add-cart active"><a href="#">Add to cart</a></li>
-                                                    <li><a class="links-details" href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- single-product-wrap end -->
-                                </div>
-                            
-                                </div>
-                                
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <!-- Tab Menu Content Area End Here -->
@@ -514,8 +378,16 @@ $collections = collect($carts);
 
 
 <script>
-    {
-        
-    }
+    function myFunction(id){
+        console.log(id);
+        $.ajax({
+            type: 'GET',
+            url: '/add-to-cart/'+id, 
+            dataType:'JSON',
+            success:function(response) {
+            window.location = "/addtocart/show";
+       }
+    })
+}
 </script>
 @endsection

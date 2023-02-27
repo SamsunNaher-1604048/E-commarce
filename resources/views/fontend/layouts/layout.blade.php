@@ -44,6 +44,8 @@
         <script src="{{asset('fontend/js/vendor/modernizr-2.8.3.min.js')}}"></script>
         <!-- jQuery-V1.12.4 -->
         <script src="{{asset('fontend/js/vendor/jquery-1.12.4.min.js')}}"></script>
+        {!! htmlScriptTagJsApi() !!}
+   
     </head>
     <body>
         <div class="body-wrapper">

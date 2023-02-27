@@ -50,7 +50,15 @@ $collections = collect($carts);
 
 
                         <div class="single-add-to-cart cart-quantity">
-                            <button class="add-to-cart" type="button" id='cartbutton'> Add to cart</button>
+                            <?php
+                            $prodExist = $collections->where('id', $product->id)->first();
+                            $disabled = $prodExist ? 'disabled' : ' ';
+                           ?>
+                           @if($disabled == 'disabled' )
+                             <button class="add-to-cart" type="button"> Already Added</button>
+                           @else
+                             <button class="add-to-cart" type="button" id='cartbutton'> Add to cart</button>
+                           @endif
                         </div>
                         <div class="product-additional-info pt-25">
                           
