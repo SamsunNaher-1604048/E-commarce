@@ -9,16 +9,17 @@
                 <div class="row">
                     <div class="col-md-12 mb-20">
                         <label>Name</label>
-                        <input class="mb-0" type="text" placeholder="First Name" name="name">
+                        <input class="mb-0" type="text" placeholder="First Name" name="name" required>
                     </div>
                     <div class="col-md-12 mb-20">
                         <label>Email Address</label>
-                        <input class="mb-0" type="email" placeholder="Email Address" name="email">
+                        <input class="mb-0" type="email" placeholder="Email Address" name="email" required>
                     </div>
                     <div class="col-md-12 mb-20">
                         <label>Password</label>
-                        <input class="mb-0" type="password" placeholder="Password" name='password'>
+                        <input class="mb-0" type="password" placeholder="Password" name='password' required>
                     </div>
+                    {!! htmlFormSnippet() !!}
                     <div class="col-12">
                         <button class="register-button mt-0" type="submit">Register</button>
                     </div>
