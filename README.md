@@ -1,6 +1,9 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 # Laravel E-commerce Project
+this is a simple e-commerce project with all of importent functionality. User can "add to cart" of Product and also user can see Bestselling Product and tranding Product. In admin section, admin can do CRUD operation of Product, Category and Slide, admin can  edit order product which cone from user. This is my frist laravel project and making this project is fun.
+
+
 
 ***
 
