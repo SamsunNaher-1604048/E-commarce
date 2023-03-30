@@ -14,6 +14,7 @@ This is a simple e-commerce project with all of importent functionality. User ca
 - CSS
 - PHP
 - AJAX
+- CK editior
 
 
 ***
@@ -26,6 +27,17 @@ This is a simple e-commerce project with all of importent functionality. User ca
 - CRUD operation of Slide
 - CRUR operation of Product order
 - Searching Option
+
+
+### User Functionality
+ - User can search the product.
+ - User can see the poduct.
+ - Add to cart the product.
+ - User can give order.
+
+### Admin Functionality
+ - Cand do all CRUD operation of a product.
+ - Cancel the product.
 
 
 
